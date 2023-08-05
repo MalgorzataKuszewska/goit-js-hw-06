@@ -9,6 +9,8 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("ul#ingredients");
 
+const liElements = [];
+
 ingredients.forEach((ingredient) => {
   const liElement = document.createElement("li");
 
@@ -16,5 +18,7 @@ ingredients.forEach((ingredient) => {
 
   liElement.classList.add("item");
 
-  ingredientsList.appendChild(liElement);
+  liElements.push(liElement);
 });
+
+ingredientsList.append(...liElements);
